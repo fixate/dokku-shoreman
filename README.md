@@ -12,6 +12,19 @@ plugin will run all process types (web, worker, etc.) and stop them all together
 git clone https://github.com/statianzo/dokku-shoreman.git /var/lib/dokku/plugins/dokku-shoreman
 ```
 
+## Usage
+
+You can optionally specify the processes to run for a given container with the
+`DOKKU_ROLES` environment variable. Each role is seperated by a space.
+
+For instance:
+
+```shell
+DOKKU_ROLES="worker anotherprocess"
+```
+
+Will run the `worker` and `anotherprocess` from your `Procfile`
+
 All future deployments will use shoreman to start all processes.
 
 ## License
